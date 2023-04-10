@@ -8,11 +8,21 @@ pipeline {
 
                 git branch: 'main', url: 'https://github.com/CaptainDemir/demo-app2.git'
             
-            
+            }
 
         }
+        stage ("Unit Testing"){
+            steps {
 
-    }
+                sh "mvn test"
+            
+            }
+
+     
+        
+ }
+
+
 }
 
 }
