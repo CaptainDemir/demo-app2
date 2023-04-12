@@ -68,7 +68,7 @@ pipeline {
         }
 
 
-        stage("uploda war file to nexu"){
+        stage("upload war file to nexus"){
 
             steps{
 
