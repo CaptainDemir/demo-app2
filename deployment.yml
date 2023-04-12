@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  mydeployment
+  namespace: default
+  labels:
+    app:  MYAPP
+spec:
+  selector:
+    matchLabels:
+      app: myspringbootapp
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app:  myspringbootapp
+    spec:
+      # initContainers:
+        # Init containers are exactly like regular containers, except:
+          # - Init containers always run to completion.
+          # - Each init container must complete successfully before the next one starts.
+      containers:
+      - name:  myspringbootapp
+        image:  captaindemir/demo-app:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort:  9099
+
+ 
