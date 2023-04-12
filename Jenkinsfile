@@ -113,6 +113,25 @@ pipeline {
                 }
             }
         }
+
+
+        stage("Push Image to Docker Hub"){
+           
+           steps{
+
+            withCredentials([string(credentialsId: 'docker_creds', variable: 'docker_hub_cred')]) {
+                
+                sh"docker login -u captaindemir -p ${docker_hub_cred}"
+                sh"dcoker image push captaindemir/$JOB_NAME:v1.$BUILD_ID"
+                sh"dcoker image push captaindemir/$JOB_NAME:latest"
+              
+              }
+
+
+
+           }
+
+        }
         
  }
 
