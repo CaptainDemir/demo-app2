@@ -120,8 +120,41 @@ stages{
 
         }
 
+        stage ('delete cluster'){
+            when { expression { params.action == 'destroyekscluster'} }
+
+            steps {
+                
+                
+
+                script {
+                   
+                   def destroyekscluster = false
+                   try {
+
+                       input message: 'please confirm the destroy eks cluster to initiate the deployments', ok: ' Ready to destroy eks cluster the config'
+                       destroyekscluster = true
+
+                   }
+
+                   catch(err){
+                     destroyekscluster = false
+                     CurrentBuild.result= 'UNSTABLE'
+                     
+                    }
+                    if(destroyekscluster){
+                        
+                        sh """  aws eks delete-cluster --name demo-cluster 
+
+                            """;
+                    }
 
 
+               }
+            
+            }
+
+        }
 
 
 
