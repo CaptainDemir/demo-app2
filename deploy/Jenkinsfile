@@ -35,7 +35,7 @@ stages{
                 
                sh 'aws configure set aws_secret_access_key $SECRET_KEY'
                sh 'aws configure set region $params.region '
-               sh 'aws eks update-kubeconfig --name $params.cluster --region $params.region'
+               sh 'aws eks update-kubeconfig --name $params.cluster --region $params.region '
                   
             
                 
