@@ -76,7 +76,7 @@ stages{
                     }
                     if(apply){
                         
-                        sh """ microk8s kubectl apply -f . """;
+                        sh """ sudo microk8s kubectl apply -f . """;
                     }
 
 
