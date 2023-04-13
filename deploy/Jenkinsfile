@@ -75,7 +75,7 @@ stages{
                     }
                     if(apply){
                         
-                        sh 'kubectl apply -f . '
+                        sh ''' kubectl apply -f . '''
                     }
 
 
