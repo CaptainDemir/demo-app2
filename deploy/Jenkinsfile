@@ -27,7 +27,7 @@ stages{
 
                 sh""""
 
-                 aws eks --region ${params.region} --name ${param.cluster}
+                 aws eks --region ${params.regions} --name ${param.cluster}
 
                 """;
 
