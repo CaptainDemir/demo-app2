@@ -36,7 +36,7 @@ stages{
                  aws configure aws_secret_access_key "$SECRET_KEY"
                  aws eks --region ${params.region} --name ${param.cluster}
 
-                """;
+                """
 
                 
             
