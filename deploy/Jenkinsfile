@@ -50,7 +50,7 @@ stages{
         }
 
 
-/*         stage ("eks deployment"){
+        stage ("eks deployment"){
             
             steps {
                 when { expression { param.action== "create"}
@@ -83,7 +83,7 @@ stages{
             
             }
 
-        } */
+        }
 
   
 
